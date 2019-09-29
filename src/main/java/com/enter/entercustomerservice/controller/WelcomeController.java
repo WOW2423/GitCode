@@ -22,8 +22,6 @@ public class WelcomeController {
     private TestMapper testMapper;
 
 
-
-
     @RequestMapping("/welcome")
     public ResultBean welcome(){
         String information="部署失败";
