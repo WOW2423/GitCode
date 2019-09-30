@@ -5,10 +5,12 @@ import com.enter.entercustomerservice.utils.TimeUtils;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 @Data
 @Table(name = "enter_badreport")
-public class BadReport implements TimeSet{
+public class BadReport implements Serializable, TimeSet{
+    private static final long serialVersionUID = -1062261855920822443L;
     /**
      * 举报id
      */

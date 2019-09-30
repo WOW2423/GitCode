@@ -36,7 +36,7 @@ public class ServiceProcessDTO implements Serializable {
     /**
      * 归属的项目类型
      */
-    private Integer projectType;
+    private String projectType;
 
     /**
      * 顺序
