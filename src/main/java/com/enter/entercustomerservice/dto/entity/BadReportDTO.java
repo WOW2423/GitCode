@@ -25,7 +25,7 @@ public class BadReportDTO implements Serializable {
     /**
      * 说明举报所属的项目
      */
-    private Integer projectType;
+    private String projectType;
 
     /**
      * 举报的图片列表
