@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author Liquid
  * @类名： CommonProblemServiceImpl
- * @描述：
+ * @描述：  服务问题
  * @date 2019/9/29
  */
 @Service("commonProblemService")
