@@ -1,6 +1,7 @@
 package com.enter.entercustomerservice.service.impl;
 
 import com.enter.entercustomerservice.dao.database.mysql.mybatis.ServiceProcessMapper;
+import com.enter.entercustomerservice.dto.entity.BadReportDTO;
 import com.enter.entercustomerservice.dto.entity.ServiceProcessDTO;
 import com.enter.entercustomerservice.entity.ServiceProcess;
 import com.enter.entercustomerservice.service.ServiveProcessService;
@@ -31,14 +32,15 @@ public class ServiceProcessServiceImpl implements ServiveProcessService {
     }
 
     @Override
-    public List<ServiceProcessDTO> selectAll() {
+    public List<BadReportDTO> selectAll() {
         List<ServiceProcess> serviceProcesses = serviceProcessMapper.selectAll();
         List<ServiceProcessDTO> serviceProcessDTOList=new ArrayList<>();
         for (ServiceProcess serviceProcess : serviceProcesses) {
             ServiceProcessDTO serviceProcessDTO = new ServiceProcessDTO().convertToDto(serviceProcess);
             serviceProcessDTOList.add(serviceProcessDTO);
         }
-        return serviceProcessDTOList;
+        //return serviceProcessDTOList;
+        return null;
     }
 
     @Override
