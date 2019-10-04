@@ -37,7 +37,6 @@ public class BadReportServiceImpl implements BadReportService {
         BadReport badReport = badReportDTO.convertToDo();
         badReport.setAllTime();
         badReportMapper.insert(badReport);
-        System.out.println("插入成功");
     }
 
 

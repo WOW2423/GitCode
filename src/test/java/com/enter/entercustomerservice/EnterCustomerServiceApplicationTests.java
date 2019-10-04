@@ -22,7 +22,6 @@ public class EnterCustomerServiceApplicationTests {
 	public void contextLoads() {
 		BadReportDTO badReportDTO = new BadReportDTO();
 		badReportDTO.setId(1);
-		badReportController.deleteByPrimary(badReportDTO);
     }
 
     @Test

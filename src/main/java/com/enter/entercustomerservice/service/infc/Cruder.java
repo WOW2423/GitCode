@@ -1,7 +1,5 @@
 package com.enter.entercustomerservice.service.infc;
 
-import com.enter.entercustomerservice.dto.entity.BadReportDTO;
-
 import java.util.List;
 
 /**
@@ -12,7 +10,7 @@ import java.util.List;
 public interface Cruder<T> {
     void insert(T t) throws Exception;
 
-    List<BadReportDTO> selectAll();
+    List<T> selectAll();
 
     T selectByPrimary(T t);
 

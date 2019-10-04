@@ -1,7 +1,6 @@
 package com.enter.entercustomerservice.service.impl;
 
 import com.enter.entercustomerservice.dao.database.mysql.mybatis.CommonProblemMapper;
-import com.enter.entercustomerservice.dto.entity.BadReportDTO;
 import com.enter.entercustomerservice.dto.entity.CommonProblemDTO;
 import com.enter.entercustomerservice.entity.CommonProblem;
 import com.enter.entercustomerservice.service.CommonProblemService;
@@ -36,7 +35,7 @@ public class CommonProblemServiceImpl implements CommonProblemService {
 
 
     @Override
-    public List<BadReportDTO> selectAll() {
+    public List<CommonProblemDTO> selectAll() {
         List<CommonProblem> commonProblems = commonProblemMapper.selectAll();
         List<CommonProblemDTO> commonProblemDTOList=new ArrayList<>();
         for (CommonProblem commonProblem : commonProblems) {
