@@ -27,7 +27,7 @@ public class FeedbackServiceImpl implements FeedbackService {
         List<Feedback> feedbacks =feedbackMapper.selectAll();
         List<FeedbackDTO> feedbackDTOS =new ArrayList<>();
         for(Feedback feedback :feedbacks){
-            FeedbackDTO feedbackDTO =new FeedbackDTO().convertToDto(feedback);
+            FeedbackDTO feedbackDTO =new FeedbackDTO().convertToDTO(feedback);
             feedbackDTOS.add(feedbackDTO);
         }
         return feedbackDTOS;
@@ -36,7 +36,7 @@ public class FeedbackServiceImpl implements FeedbackService {
     @Override
     public FeedbackDTO selectByPrimary(FeedbackDTO feedbackDTO) {
         Feedback feedback = feedbackMapper.selectByPrimaryKey(feedbackDTO.getId());
-        return new FeedbackDTO().convertToDto(feedback);
+        return new FeedbackDTO().convertToDTO(feedback);
     }
 
     @Override

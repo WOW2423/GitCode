@@ -39,7 +39,7 @@ public class CommonProblemServiceImpl implements CommonProblemService {
         List<CommonProblem> commonProblems = commonProblemMapper.selectAll();
         List<CommonProblemDTO> commonProblemDTOList=new ArrayList<>();
         for (CommonProblem commonProblem : commonProblems) {
-            CommonProblemDTO commonProblemDTO = new CommonProblemDTO().convertToDto(commonProblem);
+            CommonProblemDTO commonProblemDTO = new CommonProblemDTO().convertToDTO(commonProblem);
             commonProblemDTOList.add(commonProblemDTO);
         }
         //return commonProblemDTOList;
@@ -51,7 +51,7 @@ public class CommonProblemServiceImpl implements CommonProblemService {
         CommonProblem commonProblem = commonProblemDTO.convertToDo();
         commonProblem.setAllTime();
         CommonProblem c = commonProblemMapper.selectByPrimaryKey(commonProblem.getId());
-        return new CommonProblemDTO().convertToDto(c);
+        return new CommonProblemDTO().convertToDTO(c);
     }
 
     @Override

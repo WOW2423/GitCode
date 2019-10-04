@@ -1314,3 +1314,27 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2019-10-04 15:55:04.421  INFO 7820 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
 2019-10-04 15:55:04.787  INFO 7820 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2019-10-04 15:55:04.795  INFO 7820 --- [Thread-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-10-04 20:05:25.943  INFO 2044 --- [main] c.e.e.EnterCustomerServiceApplication    : Starting EnterCustomerServiceApplication on DESKTOP-HP47L6V with PID 2044 (D:\ideaWorkPlace\enter-customer-service\target\classes started by GR in D:\ideaWorkPlace\enter-customer-service)
+2019-10-04 20:05:25.946  INFO 2044 --- [main] c.e.e.EnterCustomerServiceApplication    : No active profile set, falling back to default profiles: default
+2019-10-04 20:05:26.878  INFO 2044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-04 20:05:26.881  INFO 2044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-04 20:05:26.940  INFO 2044 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 0 repository interfaces.
+2019-10-04 20:05:27.067  WARN 2044 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'badReportMapper' and 'com.enter.entercustomerservice.dao.database.mysql.mybatis.BadReportMapper' mapperInterface. Bean already defined with the same name!
+2019-10-04 20:05:27.068  WARN 2044 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'commonProblemMapper' and 'com.enter.entercustomerservice.dao.database.mysql.mybatis.CommonProblemMapper' mapperInterface. Bean already defined with the same name!
+2019-10-04 20:05:27.068  WARN 2044 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'feedbackMapper' and 'com.enter.entercustomerservice.dao.database.mysql.mybatis.FeedbackMapper' mapperInterface. Bean already defined with the same name!
+2019-10-04 20:05:27.068  WARN 2044 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'serviceProcessMapper' and 'com.enter.entercustomerservice.dao.database.mysql.mybatis.ServiceProcessMapper' mapperInterface. Bean already defined with the same name!
+2019-10-04 20:05:27.068  WARN 2044 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'testMapper' and 'com.enter.entercustomerservice.dao.database.mysql.mybatis.TestMapper' mapperInterface. Bean already defined with the same name!
+2019-10-04 20:05:27.068  WARN 2044 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.enter.entercustomerservice]' package. Please check your configuration.
+2019-10-04 20:05:27.374  INFO 2044 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$354590f2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-04 20:05:27.940  INFO 2044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 463 (https) 8100 (http)
+2019-10-04 20:05:27.979  INFO 2044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-04 20:05:27.979  INFO 2044 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-10-04 20:05:28.131  INFO 2044 --- [main] o.a.c.c.C.[.[.[/customer_service]        : Initializing Spring embedded WebApplicationContext
+2019-10-04 20:05:28.132  INFO 2044 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2146 ms
+2019-10-04 20:05:28.232  INFO 2044 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.enter.entercustomerservice.context.template.SendTemplatorFactory com.enter.entercustomerservice.context.template.TemplatorContext.sendTemplatorFactory
+2019-10-04 20:05:29.305  INFO 2044 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-04 20:05:29.436  INFO 2044 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2019-10-04 20:05:29.438  INFO 2044 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2019-10-04 20:05:29.438  INFO 2044 --- [main] t.m.m.autoconfigure.MapperCacheDisabler  : Clear EntityHelper entityTableMap cache.
+2019-10-04 20:05:30.333  INFO 2044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 463 (https) 8100 (http) with context path '/customer_service'
+2019-10-04 20:05:30.336  INFO 2044 --- [main] c.e.e.EnterCustomerServiceApplication    : Started EnterCustomerServiceApplication in 4.929 seconds (JVM running for 5.973)

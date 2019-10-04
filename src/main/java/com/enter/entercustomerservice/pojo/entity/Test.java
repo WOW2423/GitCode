@@ -1,10 +1,7 @@
 package com.enter.entercustomerservice.entity;
 
-import com.enter.entercustomerservice.controller.BadReportController;
-import com.enter.entercustomerservice.dto.entity.BadReportDTO;
-import com.enter.entercustomerservice.service.BadReportService;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;

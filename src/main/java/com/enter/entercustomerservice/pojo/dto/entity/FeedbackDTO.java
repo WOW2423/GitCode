@@ -1,6 +1,7 @@
 package com.enter.entercustomerservice.dto.entity;
 
-import com.enter.entercustomerservice.dto.Convertible;
+import com.enter.entercustomerservice.dto.DoConvertible;
+import com.enter.entercustomerservice.dto.VoConvertible;
 import com.enter.entercustomerservice.entity.Feedback;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
@@ -50,22 +51,32 @@ public class FeedbackDTO implements Serializable {
     private String content;
 
 
-    private static FeedbackConvert feedbackConvert;
+    private static FeedbackDoConvert feedbackDoConvert;
+    private static FeedbackVoConvert feedbackVoConvert;
 
     static {
-        feedbackConvert = new FeedbackConvert();
+        feedbackDoConvert = new FeedbackDoConvert();
+        feedbackVoConvert=new FeedbackVoConvert();
     }
 
     public Feedback convertToDo() {
 
-        return feedbackConvert.convertToDO(this);
+        return feedbackDoConvert.convertToDO(this);
     }
 
-    public FeedbackDTO convertToDto(Feedback feedback) {
-        return feedbackConvert.convertToDTO(feedback);
+    public FeedbackDTO convertToDTO(Feedback feedback) {
+        return feedbackDoConvert.convertToDTO(feedback);
     }
 
-    public static class FeedbackConvert implements Convertible<Feedback, FeedbackDTO> {
+    public FeedbackVO convertToVo() {
+        return feedbackVoConvert.convertToVO(this);
+    }
+
+    public FeedbackDTO feedbackToDTO(FeedbackVO feedbackVO) {
+        return feedbackVoConvert.convertToDTO(feedbackVO);
+    }
+
+    public static class FeedbackDoConvert implements DoConvertible<Feedback, FeedbackDTO> {
 
         @Override
         public Feedback convertToDO(FeedbackDTO feedbackDTO) {
@@ -78,6 +89,21 @@ public class FeedbackDTO implements Serializable {
         public FeedbackDTO convertToDTO(Feedback feedback) {
             FeedbackDTO feedbackDTO = new FeedbackDTO();
             BeanUtils.copyProperties(feedback, feedbackDTO);
+            return feedbackDTO;
+        }
+    }
+    public static class FeedbackVoConvert implements VoConvertible<FeedbackVO, FeedbackDTO> {
+        @Override
+        public FeedbackVO convertToVO(FeedbackDTO feedbackDTO) {
+            FeedbackVO feedbackVO = new FeedbackVO();
+            BeanUtils.copyProperties(feedbackDTO, feedbackVO);
+            return feedbackVO;
+        }
+
+        @Override
+        public FeedbackDTO convertToDTO(FeedbackVO feedbackVO) {
+            FeedbackDTO feedbackDTO = new FeedbackDTO();
+            BeanUtils.copyProperties(feedbackVO, feedbackDTO);
             return feedbackDTO;
         }
     }

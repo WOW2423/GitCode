@@ -35,7 +35,7 @@ public class ServiceProcessServiceImpl implements ServiveProcessService {
         List<ServiceProcess> serviceProcesses = serviceProcessMapper.selectAll();
         List<ServiceProcessDTO> serviceProcessDTOList=new ArrayList<>();
         for (ServiceProcess serviceProcess : serviceProcesses) {
-            ServiceProcessDTO serviceProcessDTO = new ServiceProcessDTO().convertToDto(serviceProcess);
+            ServiceProcessDTO serviceProcessDTO = new ServiceProcessDTO().convertToDTO(serviceProcess);
             serviceProcessDTOList.add(serviceProcessDTO);
         }
         //return serviceProcessDTOList;
@@ -47,7 +47,7 @@ public class ServiceProcessServiceImpl implements ServiveProcessService {
         ServiceProcess serviceProcess = serviceProcessDTO.convertToDo();
         serviceProcess.setAllTime();
         ServiceProcess s = serviceProcessMapper.selectByPrimaryKey(serviceProcess.getId());
-        return new ServiceProcessDTO().convertToDto(s);
+        return new ServiceProcessDTO().convertToDTO(s);
     }
 
     @Override
