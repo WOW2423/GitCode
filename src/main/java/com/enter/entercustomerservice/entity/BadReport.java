@@ -53,10 +53,6 @@ public class BadReport implements Serializable, TimeSet{
     @Column(name = "last_update_time")
     private Date lastUpdateTime;
 
-
-
-
-
     @Override
     public void setAllTime() {
         Date currentTime = TimeUtils.getCurrentTime();

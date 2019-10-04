@@ -1,6 +1,7 @@
 package com.enter.entercustomerservice.service.impl;
 
 import com.enter.entercustomerservice.dao.database.mysql.mybatis.CommonProblemMapper;
+import com.enter.entercustomerservice.dto.entity.BadReportDTO;
 import com.enter.entercustomerservice.dto.entity.CommonProblemDTO;
 import com.enter.entercustomerservice.entity.CommonProblem;
 import com.enter.entercustomerservice.service.CommonProblemService;
@@ -13,9 +14,11 @@ import java.util.List;
 /**
  * @author Liquid
  * @类名： CommonProblemServiceImpl
- * @描述：
+ * @描述：  服务问题
  * @date 2019/9/29
  */
+
+
 @Service("commonProblemService")
 public class CommonProblemServiceImpl implements CommonProblemService {
 
@@ -31,15 +34,17 @@ public class CommonProblemServiceImpl implements CommonProblemService {
         System.out.println("插入成功");
     }
 
+
     @Override
-    public List<CommonProblemDTO> selectAll() {
+    public List<BadReportDTO> selectAll() {
         List<CommonProblem> commonProblems = commonProblemMapper.selectAll();
         List<CommonProblemDTO> commonProblemDTOList=new ArrayList<>();
         for (CommonProblem commonProblem : commonProblems) {
             CommonProblemDTO commonProblemDTO = new CommonProblemDTO().convertToDto(commonProblem);
             commonProblemDTOList.add(commonProblemDTO);
         }
-        return commonProblemDTOList;
+        //return commonProblemDTOList;
+        return null;
     }
 
     @Override
@@ -65,3 +70,4 @@ public class CommonProblemServiceImpl implements CommonProblemService {
         System.out.println("删除成功");
     }
 }
+

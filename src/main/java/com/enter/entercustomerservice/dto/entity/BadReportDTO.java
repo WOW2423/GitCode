@@ -1,7 +1,11 @@
 package com.enter.entercustomerservice.dto.entity;
 
+import com.enter.entercustomerservice.dao.database.mysql.mybatis.BadReportMapper;
 import com.enter.entercustomerservice.dto.Convertible;
 import com.enter.entercustomerservice.entity.BadReport;
+import com.enter.entercustomerservice.service.BadReportService;
+import com.enter.entercustomerservice.service.impl.BadReportServiceImpl;
+import io.netty.util.AsciiString;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
@@ -25,7 +29,7 @@ public class BadReportDTO implements Serializable {
     /**
      * 说明举报所属的项目
      */
-    private String projectType;
+    private Integer projectType;
 
     /**
      * 举报的图片列表
@@ -55,6 +59,30 @@ public class BadReportDTO implements Serializable {
 
     public BadReportDTO convertToDto(BadReport badReport) {
         return badReportConvert.convertToDTO(badReport);
+    }
+
+    public Integer getUserId() {
+        return id;
+    }
+
+    public String getReportContent() {
+        return content;
+    }
+
+    public String getImgPath() {
+        return imgPaths;
+    }
+
+    public BadReport convertToBadReport() {
+        return badReportConvert.convertToDO(this);
+    }
+
+    public BadReportDTO convertToBadReportDTO(BadReport badReport) {
+        return badReportConvert.convertToDTO(badReport);
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPaths = imgPath;
     }
 
     public static class BadReportConvert implements Convertible<BadReport, BadReportDTO> {
