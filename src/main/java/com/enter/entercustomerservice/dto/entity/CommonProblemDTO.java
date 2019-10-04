@@ -1,6 +1,7 @@
 package com.enter.entercustomerservice.dto.entity;
 
-import com.enter.entercustomerservice.dto.Convertible;
+import com.enter.entercustomerservice.dto.DoConvertible;
+import com.enter.entercustomerservice.dto.VoConvertible;
 import com.enter.entercustomerservice.entity.CommonProblem;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
@@ -37,22 +38,32 @@ public class CommonProblemDTO implements Serializable {
      */
     private String content;
 
-    private static CommonProblemConvert commonProblemConvert;
+    private static CommonProblemDoConvert commonProblemDoConvert;
+    private static CommonProblemVoConvert commonProblemVoConvert;
 
     static {
-        commonProblemConvert = new CommonProblemConvert();
+        commonProblemDoConvert = new CommonProblemDoConvert();
+        commonProblemVoConvert = new CommonProblemVoConvert();
     }
 
     public CommonProblem convertToDo() {
 
-        return commonProblemConvert.convertToDO(this);
+        return commonProblemDoConvert.convertToDO(this);
     }
 
-    public CommonProblemDTO convertToDto(CommonProblem commonProblem) {
-        return commonProblemConvert.convertToDTO(commonProblem);
+    public CommonProblemDTO convertToDTO(CommonProblem commonProblem) {
+        return commonProblemDoConvert.convertToDTO(commonProblem);
     }
 
-    public static class CommonProblemConvert implements Convertible<CommonProblem, CommonProblemDTO> {
+    public CommonProblemVO convertToVo() {
+        return commonProblemVoConvert.convertToVO(this);
+    }
+
+    public CommonProblemDTO commonProblemToDTO(CommonProblemVO commonProblemVO) {
+        return commonProblemVoConvert.convertToDTO(commonProblemVO);
+    }
+
+    public static class CommonProblemDoConvert implements DoConvertible<CommonProblem, CommonProblemDTO> {
 
         @Override
         public CommonProblem convertToDO(CommonProblemDTO commonProblemDTO) {
@@ -68,4 +79,22 @@ public class CommonProblemDTO implements Serializable {
             return commonProblemDTO;
         }
     }
+
+    public static class CommonProblemVoConvert implements VoConvertible<CommonProblemVO, CommonProblemDTO> {
+        @Override
+        public CommonProblemVO convertToVO(CommonProblemDTO commonProblemDTO) {
+            CommonProblemVO commonProblemVO = new CommonProblemVO();
+            BeanUtils.copyProperties(commonProblemDTO, commonProblemVO);
+            return commonProblemVO;
+        }
+
+        @Override
+        public CommonProblemDTO convertToDTO(CommonProblemVO commonProblemVO) {
+            CommonProblemDTO commonProblemDTO = new CommonProblemDTO();
+            BeanUtils.copyProperties(commonProblemVO, commonProblemDTO);
+            return commonProblemDTO;
+        }
+    }
 }
+
+

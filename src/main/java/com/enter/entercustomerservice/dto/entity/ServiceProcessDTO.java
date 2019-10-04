@@ -1,6 +1,7 @@
 package com.enter.entercustomerservice.dto.entity;
 
-import com.enter.entercustomerservice.dto.Convertible;
+import com.enter.entercustomerservice.dto.DoConvertible;
+import com.enter.entercustomerservice.dto.VoConvertible;
 import com.enter.entercustomerservice.entity.ServiceProcess;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
@@ -44,22 +45,31 @@ public class ServiceProcessDTO implements Serializable {
     private Integer index;
 
 
-    private static ServiceProcessConvert serviceProcessConvert;
+    private static ServiceProcessDoConvert serviceProcessDoConvert;
+    private static ServiceProcessVoConvert serviceProcessVoConvert;
 
     static {
-        serviceProcessConvert = new ServiceProcessConvert();
+        serviceProcessDoConvert = new ServiceProcessDoConvert();
+        serviceProcessVoConvert=new ServiceProcessVoConvert();
     }
 
     public ServiceProcess convertToDo() {
 
-        return serviceProcessConvert.convertToDO(this);
+        return serviceProcessDoConvert.convertToDO(this);
     }
 
-    public ServiceProcessDTO convertToDto(ServiceProcess serviceProcess) {
-        return serviceProcessConvert.convertToDTO(serviceProcess);
+    public ServiceProcessDTO convertToDTO(ServiceProcess serviceProcess) {
+        return serviceProcessDoConvert.convertToDTO(serviceProcess);
+    }
+    public ServiceProcessVO convertToVo() {
+        return serviceProcessVoConvert.convertToVO(this);
     }
 
-    public static class ServiceProcessConvert implements Convertible<ServiceProcess, ServiceProcessDTO> {
+    public ServiceProcessDTO serviceProcessToDTO(ServiceProcessVO serviceProcessVO) {
+        return serviceProcessVoConvert.convertToDTO(serviceProcessVO);
+    }
+
+    public static class ServiceProcessDoConvert implements DoConvertible<ServiceProcess, ServiceProcessDTO> {
 
         @Override
         public ServiceProcess convertToDO(ServiceProcessDTO serviceProcessDTO) {
@@ -72,6 +82,21 @@ public class ServiceProcessDTO implements Serializable {
         public ServiceProcessDTO convertToDTO(ServiceProcess serviceProcess) {
             ServiceProcessDTO serviceProcessDTO = new ServiceProcessDTO();
             BeanUtils.copyProperties(serviceProcess, serviceProcessDTO);
+            return serviceProcessDTO;
+        }
+    }
+    public static class ServiceProcessVoConvert implements VoConvertible<ServiceProcessVO, ServiceProcessDTO> {
+        @Override
+        public ServiceProcessVO convertToVO(ServiceProcessDTO serviceProcessDTO) {
+            ServiceProcessVO servicePorcessVO = new ServiceProcessVO();
+            BeanUtils.copyProperties(serviceProcessDTO, servicePorcessVO);
+            return servicePorcessVO;
+        }
+
+        @Override
+        public ServiceProcessDTO convertToDTO(ServiceProcessVO serviceProcessVO) {
+            ServiceProcessDTO serviceProcessDTO = new ServiceProcessDTO();
+            BeanUtils.copyProperties(serviceProcessVO, serviceProcessDTO);
             return serviceProcessDTO;
         }
     }

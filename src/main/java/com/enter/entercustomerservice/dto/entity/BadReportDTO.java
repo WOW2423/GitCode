@@ -1,6 +1,6 @@
 package com.enter.entercustomerservice.dto.entity;
 
-import com.enter.entercustomerservice.dto.Convertible;
+import com.enter.entercustomerservice.dto.DoConvertible;
 import com.enter.entercustomerservice.entity.BadReport;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
@@ -54,10 +54,11 @@ public class BadReportDTO implements Serializable {
     }
 
     public BadReportDTO convertToDto(BadReport badReport) {
+
         return badReportConvert.convertToDTO(badReport);
     }
 
-    public static class BadReportConvert implements Convertible<BadReport, BadReportDTO> {
+    public static class BadReportConvert implements DoConvertible<BadReport, BadReportDTO> {
 
         @Override
         public BadReport convertToDO(BadReportDTO badReportDTO) {

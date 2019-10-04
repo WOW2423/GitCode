@@ -6,7 +6,7 @@ package com.enter.entercustomerservice.dto;
  * @description
  * @date 2018/12/22
  */
-public interface Convertible<O, T> {
+public interface DoConvertible<O, T> {
     O convertToDO(T t);
 
     T convertToDTO(O o);
