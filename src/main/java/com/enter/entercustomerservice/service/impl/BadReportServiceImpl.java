@@ -17,20 +17,11 @@ import java.util.List;
  * @date 2019/9/29
  */
 
-
 @Service("BadReportService")
 public class BadReportServiceImpl implements BadReportService {
 
     @Autowired
     private BadReportMapper badReportMapper;
-
-    @Override
-    public void insertBadReportDTO(BadReportDTO badReportDTO) throws Exception {
-        BadReport badReport = badReportDTO.convertToDo();
-        badReport.setAllTime();
-        badReportMapper.insert(badReport);
-        System.out.println("插入成功");
-    }
 
     @Override
     public void insert(BadReportDTO badReportDTO) throws Exception {
@@ -39,13 +30,10 @@ public class BadReportServiceImpl implements BadReportService {
         badReportMapper.insert(badReport);
     }
 
-
-
-
     @Override
     public List<BadReportDTO> selectAll() {
         List<BadReport> badReports = badReportMapper.selectAll();
-        List<BadReportDTO> badReportDTOSList=new ArrayList<>();
+        List<BadReportDTO> badReportDTOSList = new ArrayList<>();
         for (BadReport badReport : badReports) {
             BadReportDTO badReportDTO = new BadReportDTO().convertToDto(badReport);
             badReportDTOSList.add(badReportDTO);
@@ -55,7 +43,6 @@ public class BadReportServiceImpl implements BadReportService {
 
     }
 
-
     @Override
     public BadReportDTO selectByPrimary(BadReportDTO badReportDTO) {
         BadReport badReport = badReportDTO.convertToDo();
@@ -64,7 +51,6 @@ public class BadReportServiceImpl implements BadReportService {
         BadReportDTO bb = new BadReportDTO().convertToDto(b);
         return bb;
     }
-
 
     @Override
     public void updateByPrimary(BadReportDTO badReportDTO) {

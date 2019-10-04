@@ -18,7 +18,7 @@ public class BadReportController {
 
     @PostMapping("/addBadReport")
     public ResultVO addOne(BadReportDTO badReportDTO) throws Exception {
-        badReportService.insertBadReportDTO(badReportDTO);
+        badReportService.insert(badReportDTO);
         return new ResultVO<>();
     }
 
