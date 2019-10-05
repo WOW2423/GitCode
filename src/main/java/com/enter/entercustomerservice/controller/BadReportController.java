@@ -29,21 +29,25 @@ public class BadReportController {
     public ResultBean getAllBadReports() {
         return new ResultBean<>(badReportService.selectAll());
     }
+
     @PostMapping("/insertBadReport")
-    public void  insert(BadReportDTO badReportDTO) throws Exception {
+    public void insert(BadReportDTO badReportDTO) throws Exception {
         badReportService.insert(badReportDTO);
     }
+
     @GetMapping("/selectBadReportByPrimary")
-    public ResultBean selectByPrimary(BadReportDTO badReportDTO){
+    public ResultBean selectByPrimary(BadReportDTO badReportDTO) {
         return new ResultBean(badReportService.selectByPrimary(badReportDTO));
     }
+
     @PostMapping("/updateBadReportByPrimary")
-    public ResultBean  updateByPrimary(BadReportDTO badReportDTO){
+    public ResultBean updateByPrimary(BadReportDTO badReportDTO) {
         badReportService.updateByPrimary(badReportDTO);
         return new ResultBean(badReportService.selectByPrimary(badReportDTO));
     }
+
     @PostMapping("/deleteBadReportByPrimary")
-    public void deleteByPrimary(BadReportDTO badReportDTO){
+    public void deleteByPrimary(BadReportDTO badReportDTO) {
         badReportService.deleteByPrimary(badReportDTO);
     }
 }
