@@ -1,8 +1,8 @@
 package com.enter.entercustomerservice.service.impl;
 
 import com.enter.entercustomerservice.dao.database.mysql.mybatis.FeedbackMapper;
-import com.enter.entercustomerservice.dto.entity.FeedbackDTO;
-import com.enter.entercustomerservice.entity.Feedback;
+import com.enter.entercustomerservice.pojo.dto.entity.FeedbackDTO;
+import com.enter.entercustomerservice.pojo.entity.Feedback;
 import com.enter.entercustomerservice.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

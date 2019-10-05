@@ -1,4 +1,4 @@
-package com.enter.entercustomerservice.entity.infc;
+package com.enter.entercustomerservice.pojo.entity.infc;
 
 /**
  * @author Liquid

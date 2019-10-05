@@ -1,6 +1,6 @@
 package com.enter.entercustomerservice.controller;
 
-import com.enter.entercustomerservice.dto.entity.FeedbackDTO;
+import com.enter.entercustomerservice.pojo.dto.entity.FeedbackDTO;
 import com.enter.entercustomerservice.result.ResultBean;
 import com.enter.entercustomerservice.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;

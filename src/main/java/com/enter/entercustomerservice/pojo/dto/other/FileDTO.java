@@ -1,9 +1,7 @@
-package com.enter.entercustomerservice.dto.other;
+package com.enter.entercustomerservice.pojo.dto.other;
 
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
 
 /**
  * Created by Administrator on 2019/9/30.

@@ -1,6 +1,6 @@
 package com.enter.entercustomerservice.dao.database.mysql.mybatis;
 
-import com.enter.entercustomerservice.entity.Test;
+import com.enter.entercustomerservice.pojo.entity.Test;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;

@@ -1,4 +1,4 @@
-package com.enter.entercustomerservice.entity;
+package com.enter.entercustomerservice.pojo.entity;
 
 import lombok.Data;
 

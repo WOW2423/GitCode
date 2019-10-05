@@ -1,11 +1,12 @@
 package com.enter.entercustomerservice.controller;
 
-import com.enter.entercustomerservice.dto.entity.ServiceProcessDTO;
+import com.enter.entercustomerservice.pojo.dto.entity.ServiceProcessDTO;
 import com.enter.entercustomerservice.result.ResultBean;
-import com.enter.entercustomerservice.service.ServiveProcessService;
+import com.enter.entercustomerservice.service.ServiceProcessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @className ServiceProcessController
@@ -13,29 +14,31 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @description
  * @date 2019/9/29
  */
+@RestController
 public class ServiceProcessController {
+
     @Autowired
-    private ServiveProcessService serviveProcessService;
+    private ServiceProcessService serviceProcessService;
 
     @GetMapping("/selectAllServiceProcess")
     public ResultBean getAllServiceProcess(){
-        return new ResultBean<>(serviveProcessService.selectAll());
+        return new ResultBean<>(serviceProcessService.selectAll());
     }
     @PostMapping("/insertServiceProcess")
     public void  insert(ServiceProcessDTO serviceProcessDTO) throws Exception {
-        serviveProcessService.insert(serviceProcessDTO);
+        serviceProcessService.insert(serviceProcessDTO);
     }
     @GetMapping("/selectServiceProcessByPrimary")
     public ResultBean selectByPrimary(ServiceProcessDTO serviceProcessDTO){
-        return new ResultBean(serviveProcessService.selectByPrimary(serviceProcessDTO));
+        return new ResultBean<>(serviceProcessService.selectByPrimary(serviceProcessDTO));
     }
     @PostMapping("/updateServiceProcessByPrimary")
     public ResultBean  updateByPrimary(ServiceProcessDTO serviceProcessDTO){
-        serviveProcessService.updateByPrimary(serviceProcessDTO);
-        return new ResultBean(serviveProcessService.selectByPrimary(serviceProcessDTO));
+        serviceProcessService.updateByPrimary(serviceProcessDTO);
+        return new ResultBean<>(serviceProcessService.selectByPrimary(serviceProcessDTO));
     }
     @PostMapping("/deleteServiceProcessByPrimary")
     public void deleteByPrimary(ServiceProcessDTO serviceProcessDTO){
-        serviveProcessService.deleteByPrimary(serviceProcessDTO);
+        serviceProcessService.deleteByPrimary(serviceProcessDTO);
     }
 }

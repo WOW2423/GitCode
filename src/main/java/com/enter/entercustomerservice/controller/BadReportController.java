@@ -1,8 +1,8 @@
 package com.enter.entercustomerservice.controller;
 
-import com.enter.entercustomerservice.dto.entity.BadReportDTO;
+import com.enter.entercustomerservice.pojo.dto.entity.BadReportDTO;
 import com.enter.entercustomerservice.service.BadReportService;
-import com.enter.entercustomerservice.vo.ResultVO;
+import com.enter.entercustomerservice.vo.ResultBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,38 +11,37 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("/badreports")
 public class BadReportController {
     @Autowired
     private BadReportService badReportService;
 
     @PostMapping("/addBadReport")
-    public ResultVO addOne(BadReportDTO badReportDTO) throws Exception {
+    public ResultBean addOne(BadReportDTO badReportDTO) throws Exception {
         badReportService.insert(badReportDTO);
-        return new ResultVO<>();
+        return new ResultBean<>();
     }
 
     @DeleteMapping("/deleteBadReport")
-    public ResultVO deleteOne(BadReportDTO badReportDTO) {
+    public ResultBean deleteOne(BadReportDTO badReportDTO) {
         badReportService.deleteByPrimary(badReportDTO);
-        return new ResultVO<>();
+        return new ResultBean<>();
     }
 
     @PostMapping("/updateBadReport")
-    public ResultVO updateOne(BadReportDTO badReportDTO) throws Exception {
+    public ResultBean updateOne(BadReportDTO badReportDTO) throws Exception {
         badReportService.updateByPrimary(badReportDTO);
-        return new ResultVO<>();
+        return new ResultBean<>();
     }
 
     @GetMapping("/getBadReport")
-    public ResultVO getOne(BadReportDTO badReportDTO) {
+    public ResultBean getOne(BadReportDTO badReportDTO) {
         badReportService.selectByPrimary(badReportDTO);
-        return new ResultVO<>();
+        return new ResultBean<>();
     }
 
     @GetMapping("/getBadReports")
-    public ResultVO getAll() {
-        return new ResultVO<>(badReportService.selectAll());
+    public ResultBean getAll() {
+        return new ResultBean<>(badReportService.selectAll());
     }
 
 }

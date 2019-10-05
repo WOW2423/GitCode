@@ -1,8 +1,8 @@
 package com.enter.entercustomerservice.service.impl;
 
 import com.enter.entercustomerservice.dao.database.mysql.mybatis.BadReportMapper;
-import com.enter.entercustomerservice.dto.entity.BadReportDTO;
-import com.enter.entercustomerservice.entity.BadReport;
+import com.enter.entercustomerservice.pojo.dto.entity.BadReportDTO;
+import com.enter.entercustomerservice.pojo.entity.BadReport;
 import com.enter.entercustomerservice.service.BadReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

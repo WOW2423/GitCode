@@ -1,7 +1,7 @@
 package com.enter.entercustomerservice.utils;
 
-import com.enter.entercustomerservice.dto.other.FileDTO;
-import com.enter.entercustomerservice.dto.other.FilesDTO;
+import com.enter.entercustomerservice.pojo.dto.other.FileDTO;
+import com.enter.entercustomerservice.pojo.dto.other.FilesDTO;
 import com.enter.entercustomerservice.exception.UnCheckedException;
 import com.enter.entercustomerservice.exception.UserException;
 import com.enter.entercustomerservice.enums.FileType;

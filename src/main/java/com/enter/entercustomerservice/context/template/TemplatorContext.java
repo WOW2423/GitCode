@@ -1,9 +1,8 @@
 package com.enter.entercustomerservice.context.template;
 
-import com.enter.entercustomerservice.dto.template.BaseTemplateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
+import com.enter.entercustomerservice.dto.template.BaseTemplateDTO;
 /**
  * Created by Administrator on 2019/9/30.
  */

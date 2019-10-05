@@ -1,8 +1,9 @@
-package com.enter.entercustomerservice.dto.entity;
+package com.enter.entercustomerservice.pojo.dto.entity;
 
-import com.enter.entercustomerservice.dto.DoConvertible;
-import com.enter.entercustomerservice.dto.VoConvertible;
-import com.enter.entercustomerservice.entity.ServiceProcess;
+import com.enter.entercustomerservice.pojo.dto.DoConvertible;
+import com.enter.entercustomerservice.pojo.dto.VoConvertible;
+import com.enter.entercustomerservice.pojo.entity.ServiceProcess;
+import com.enter.entercustomerservice.pojo.vo.ServiceProcessVO;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 

@@ -1,6 +1,6 @@
 package com.enter.entercustomerservice.controller;
 
-import com.enter.entercustomerservice.dto.entity.CommonProblemDTO;
+import com.enter.entercustomerservice.pojo.dto.entity.CommonProblemDTO;
 import com.enter.entercustomerservice.result.ResultBean;
 import com.enter.entercustomerservice.service.CommonProblemService;
 import org.springframework.beans.factory.annotation.Autowired;

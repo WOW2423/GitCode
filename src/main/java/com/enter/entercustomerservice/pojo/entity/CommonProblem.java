@@ -1,6 +1,6 @@
-package com.enter.entercustomerservice.entity;
+package com.enter.entercustomerservice.pojo.entity;
 
-import com.enter.entercustomerservice.entity.infc.TimeSet;
+import com.enter.entercustomerservice.pojo.entity.infc.TimeSet;
 import com.enter.entercustomerservice.utils.TimeUtils;
 import lombok.Data;
 

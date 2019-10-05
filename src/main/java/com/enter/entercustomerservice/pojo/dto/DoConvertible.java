@@ -1,4 +1,4 @@
-package com.enter.entercustomerservice.dto;
+package com.enter.entercustomerservice.pojo.dto;
 
 /**
  * @className DTOConvert

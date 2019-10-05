@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Created by Administrator on 2019/9/30.
  */
 @Data
-public class ResultVO<T> implements Serializable {
+public class ResultBean<T> implements Serializable {
     private static final long serialVersionUID = -8362519075967287843L;
 
     public static final int SUCCESS = 0;
@@ -27,11 +27,11 @@ public class ResultVO<T> implements Serializable {
 
     private T data;
 
-    public ResultVO() {
+    public ResultBean() {
         super();
     }
 
-    public ResultVO(T data) {
+    public ResultBean(T data) {
         super();
         this.data = data;
     }

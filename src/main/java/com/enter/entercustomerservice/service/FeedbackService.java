@@ -1,6 +1,6 @@
 package com.enter.entercustomerservice.service;
 
-import com.enter.entercustomerservice.dto.entity.FeedbackDTO;
+import com.enter.entercustomerservice.pojo.dto.entity.FeedbackDTO;
 import com.enter.entercustomerservice.service.infc.Cruder;
 
 /**

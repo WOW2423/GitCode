@@ -2,8 +2,6 @@ package com.enter.entercustomerservice;
 
 import com.enter.entercustomerservice.controller.BadReportController;
 import com.enter.entercustomerservice.controller.FeedbackController;
-import com.enter.entercustomerservice.dto.entity.BadReportDTO;
-import com.enter.entercustomerservice.dto.entity.FeedbackDTO;
 import org.csource.common.MyException;
 import org.csource.fastdfs.ClientGlobal;
 import org.csource.fastdfs.StorageClient;

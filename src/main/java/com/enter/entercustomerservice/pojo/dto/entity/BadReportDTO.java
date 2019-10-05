@@ -1,7 +1,7 @@
-package com.enter.entercustomerservice.dto.entity;
+package com.enter.entercustomerservice.pojo.dto.entity;
 
-import com.enter.entercustomerservice.dto.DoConvertible;
-import com.enter.entercustomerservice.entity.BadReport;
+import com.enter.entercustomerservice.pojo.dto.DoConvertible;
+import com.enter.entercustomerservice.pojo.entity.BadReport;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 

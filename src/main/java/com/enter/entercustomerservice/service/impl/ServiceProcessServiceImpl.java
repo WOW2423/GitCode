@@ -1,9 +1,9 @@
 package com.enter.entercustomerservice.service.impl;
 
 import com.enter.entercustomerservice.dao.database.mysql.mybatis.ServiceProcessMapper;
-import com.enter.entercustomerservice.dto.entity.ServiceProcessDTO;
-import com.enter.entercustomerservice.entity.ServiceProcess;
-import com.enter.entercustomerservice.service.ServiveProcessService;
+import com.enter.entercustomerservice.pojo.dto.entity.ServiceProcessDTO;
+import com.enter.entercustomerservice.pojo.entity.ServiceProcess;
+import com.enter.entercustomerservice.service.ServiceProcessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.List;
  * @date 2019/9/29
  */
 @Service("serviceProcessService")
-public class ServiceProcessServiceImpl implements ServiveProcessService {
+public class ServiceProcessServiceImpl implements ServiceProcessService {
 
     @Autowired
     private ServiceProcessMapper serviceProcessMapper;

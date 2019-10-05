@@ -1,8 +1,8 @@
 package com.enter.entercustomerservice.service.impl;
 
 import com.enter.entercustomerservice.dao.database.mysql.mybatis.CommonProblemMapper;
-import com.enter.entercustomerservice.dto.entity.CommonProblemDTO;
-import com.enter.entercustomerservice.entity.CommonProblem;
+import com.enter.entercustomerservice.pojo.dto.entity.CommonProblemDTO;
+import com.enter.entercustomerservice.pojo.entity.CommonProblem;
 import com.enter.entercustomerservice.service.CommonProblemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
