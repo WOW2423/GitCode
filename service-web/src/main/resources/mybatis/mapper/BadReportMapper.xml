@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.enter.service.database.mysql.mybatis.BadReportMapper">
+  <resultMap id="BaseResultMap" type="com.enter.service.pojo.entity.BadReport">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="project_type" jdbcType="INTEGER" property="projectType" />
+    <result column="img_paths" jdbcType="VARCHAR" property="imgPaths" />
+    <result column="wechat_number" jdbcType="VARCHAR" property="wechatNumber" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+
+  <!-- 插入举报数据 -->
+  <!-- Integer addBadReport(BadReport badReport) -->
+  <insert id="addBadReport">
+    INSERT INTO enter_badreport (
+    project_type, content,
+    img_paths, wechat_number,
+    created_time,modified_time
+    ) VALUES (
+    #{projectType}, #{content},
+    #{imgPaths}, #{wechatNumber},
+    #{createdTime},#{modifiedTime}
+    )
+  </insert>
+
+  <!-- 删除举报数据 -->
+  <!-- Integer deleteBadReport(Integer id) -->
+  <delete id="deleteBadReport">
+    DELETE FROM enter_badreport WHERE id=#{id}
+  </delete>
+
+  <!-- 更新举报数据 -->
+  <!-- Integer updateBadReport(
+            @Param("id") Integer id,
+            @Param("projectType") Integer projectType,
+            @Param("imgPaths") String imgPaths,
+            @Param("wechatNumber") String wechatNumber,
+            @Param("content") String content); -->
+  <update id="updateBadReport">
+    UPDATE
+    enter_badreport
+    SET
+    project_type=#{projectType},
+    img_paths=#{imgPaths},
+    wechat_number=#{wechatNumber},
+    content=#{content},
+    modified_time=#{modifiedTime}
+    WHERE
+    id=#{id}
+  </update>
+
+  <!-- 根据举报者微信id查询举报数据 -->
+  <!-- BadReport getBadReportByWechatNumber(String wechatNumber) -->
+  <select id="getBadReportByWechatNumber"
+          resultType="com.enter.entercustomerservice.entity.BadReport">
+    SELECT
+    *
+    FROM
+    enter_badreport
+    WHERE
+    wechat_number=#{wechatNumber}
+  </select>
+
+
+
+</mapper>
